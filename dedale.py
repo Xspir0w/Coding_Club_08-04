@@ -84,7 +84,7 @@ def algo(value):
     last_moove = "down"
     right()
     last_moove = "right"
-    print (last_moove)
+
 
 
 
