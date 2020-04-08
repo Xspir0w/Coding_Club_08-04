@@ -33,7 +33,7 @@ def right():
     setACaseXY(posX, posY, 'yellow')
     if (map[posY][posX] == 2):
         exit(0)
-    last_moove = right()
+
 
 def left():
     global posX
@@ -46,7 +46,7 @@ def left():
     setACaseXY(posX, posY, 'yellow')
     if (map[posY][posX] == 2):
         exit(0)
-    last_moove = left()
+
 
 def up():
     global posY
@@ -60,7 +60,7 @@ def up():
     setACaseXY(posX, posY, 'yellow')
     if (map[posY][posX] == 2):
         exit(0)
-    last_moove = up()
+
 
 def down():
     global posY
@@ -73,15 +73,18 @@ def down():
     setACaseXY(posX, posY, 'yellow')
     if (map[posY][posX] == 2):
         exit(0)
-    last_moove = down()
+
 
 
 dir = []
 
 def algo(value):
-    print (last_moove)
+    global last_moove
     down()
+    last_moove = "down"
     right()
+    last_moove = "right"
+    print (last_moove)
 
 
 
