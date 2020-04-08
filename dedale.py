@@ -7,6 +7,7 @@ posX = 1
 posY = 1
 map = [[]] * 100
 
+
 for value in range(0, 100):
     map[value] = [0] * 100
 
@@ -20,6 +21,7 @@ def checkered(canvas, line_distance):
    for y in range(line_distance,canvas_height,line_distance):
       canvas.create_line(0, y * (incr), canvas_width, y * (incr), fill="#476042")
 
+last_moove = 0
 def right():
     global posX
     global posY
@@ -31,6 +33,7 @@ def right():
     setACaseXY(posX, posY, 'yellow')
     if (map[posY][posX] == 2):
         exit(0)
+    last_moove = right()
 
 def left():
     global posX
@@ -43,6 +46,7 @@ def left():
     setACaseXY(posX, posY, 'yellow')
     if (map[posY][posX] == 2):
         exit(0)
+    last_moove = left()
 
 def up():
     global posY
@@ -56,6 +60,7 @@ def up():
     setACaseXY(posX, posY, 'yellow')
     if (map[posY][posX] == 2):
         exit(0)
+    last_moove = up()
 
 def down():
     global posY
@@ -68,13 +73,18 @@ def down():
     setACaseXY(posX, posY, 'yellow')
     if (map[posY][posX] == 2):
         exit(0)
-
+    last_moove = down()
 
 
 dir = []
 
 def algo(value):
+    print (last_moove)
     down()
+    right()
+
+
+
 
 
 
