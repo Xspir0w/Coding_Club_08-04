@@ -82,9 +82,19 @@ def algo(value):
     global last_moove
     down()
     last_moove = "down"
+    if (last_moove == "down"):
+        right()
+        last_moove = "right"
     right()
     last_moove = "right"
-
+    last_moove = "right"
+    if (last_moove == "right"):
+        left()
+        last_moove = "left"
+    if (last_moove == "left"):
+        down()
+        last_moove = "left"
+        
 
 
 
