@@ -21,7 +21,7 @@ def checkered(canvas, line_distance):
    for y in range(line_distance,canvas_height,line_distance):
       canvas.create_line(0, y * (incr), canvas_width, y * (incr), fill="#476042")
 
-last_moove = 0
+
 def right():
     global posX
     global posY
@@ -77,24 +77,13 @@ def down():
 
 
 dir = []
-
+last_moove = 0
 def algo(value):
     global last_moove
-    down()
-    last_moove = "down"
-    if (last_moove == "down"):
-        right()
-        last_moove = "right"
-    right()
-    last_moove = "right"
-    last_moove = "right"
-    if (last_moove == "right"):
-        left()
-        last_moove = "left"
-    if (last_moove == "left"):
-        down()
-        last_moove = "left"
-        
+    
+
+
+
 
 
 
