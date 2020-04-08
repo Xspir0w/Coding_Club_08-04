@@ -212,7 +212,7 @@ map[21][47] = 2
 
 
 for value in range(0, 1000):
-    master.after(value * 100, algo, value)
+    master.after(value * 35, algo, value)
 
 checkered(w,10)
 
