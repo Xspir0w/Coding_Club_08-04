@@ -77,10 +77,87 @@ def down():
 
 
 dir = []
-last_moove = 0
+last_moove = "down"
 def algo(value):
     global last_moove
-    
+    if (last_moove=="down"):
+        if (map[posY][posX - 1] == 1) and not (map[posY + 1][posX] == 1):
+            down()
+
+        elif (map[posY][posX - 1] == 1) and (map[posY][posX + 1] == 1) and (map[posY + 1][posX] == 1):
+            up()
+            last_moove="up"
+
+        elif (map[posY][posX - 1] == 1) and (map[posY + 1][posX] == 1):
+            right()
+            last_moove="right"
+
+        elif (map[posY][posX - 1] != 1) :
+            left()
+            last_moove="left"
+
+
+
+    elif (last_moove=="up"):
+
+        if (map[posY][posX + 1] == 1) and not (map[posY - 1][posX] == 1):
+            up()
+
+        elif (map[posY][posX - 1] == 1) and (map[posY][posX + 1] == 1) and (map[posY - 1][posX] == 1):
+            down()
+            prevDirection="down"
+
+        elif (map[posY][posX + 1] == 1) and (map[posY - 1][posX] == 1):
+            left()
+            last_moove="left"
+
+        elif (map[posY][posX + 1] != 1):
+            right()
+            last_moove="right"
+
+
+
+
+    elif (last_moove=="right"):
+        if (map[posY + 1][posX] == 1) and not (map[posY][posX + 1] == 1):
+            right()
+
+        elif (map[posY - 1][posX] == 1) and (map[posY][posX + 1] == 1) and (map[posY + 1][posX] == 1):
+            left()
+            last_moove="left"
+
+        elif (map[posY + 1][posX] == 1) and (map[posY][posX + 1] == 1):
+            up()
+            last_moove="up"
+
+        elif (map[posY + 1][posX] != 1):
+            down()
+            last_moove="down"
+
+
+
+
+    elif (last_moove=="left"):
+        if (map[posY - 1][posX] == 1) and not (map[posY][posX - 1] == 1):
+            left()
+
+        elif (map[posY][posX - 1] == 1) and (map[posY - 1][posX] == 1) and (map[posY + 1][posX] == 1):
+            right()
+            last_moove="right"
+
+        elif (map[posY - 1][posX] == 1) and (map[posY][posX - 1] == 1):
+            down()
+            last_moove="down"
+
+        elif (map[posY - 1][posX] != 1):
+            up()
+            last_moove="up"
+
+
+
+
+    else:
+        down()
 
 
 
